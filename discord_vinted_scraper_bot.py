@@ -4,6 +4,7 @@ import requests
 import asyncio
 import json
 import os
+import cloudscraper
 
 TOKEN = "YOUR_DISCORD_BOT_TOKEN"
 CHANNEL_ID = 123456789012345678
@@ -45,8 +46,9 @@ seen_items = load_seen()
 
 def scrape_vinted():
     try:
-        response = requests.get(SEARCH_URL, headers=headers)
-        data = response.json()
+    scraper = cloudscraper.create_scraper()
+    response = scraper.get(SEARCH_URL, headers=headers)
+    data = response.json()
 
         items = []
 
