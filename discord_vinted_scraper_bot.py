@@ -46,9 +46,9 @@ seen_items = load_seen()
 
 def scrape_vinted():
     try:
-    scraper = cloudscraper.create_scraper()
-    response = scraper.get(SEARCH_URL, headers=headers)
-    data = response.json()
+        scraper = cloudscraper.create_scraper()
+        response = scraper.get(SEARCH_URL, headers=headers)
+        data = response.json()
 
         items = []
 
